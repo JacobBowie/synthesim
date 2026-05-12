@@ -1,0 +1,42 @@
+# Source control + CI
+.git
+.github
+
+# R local
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user
+*.Rproj
+
+# Python local
+__pycache__
+*.pyc
+.ipynb_checkpoints
+.venv
+env
+**/__marimo__
+
+# marimo + WASM build output
+build
+dist
+*.html
+
+# Validator output (regeneratable inside the container)
+data/validation/reference_modes/*.rds
+data/validation/reference_modes/*.csv
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+*.swp
+
+# Agent state
+.claude
+
+# Docker meta (recursion guard)
+Dockerfile
+.dockerignore
+docker-compose.yml

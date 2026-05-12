@@ -1,0 +1,43 @@
+# synthesim — three runtimes, one image.
+#
+# Quickstart:
+#   docker compose up shiny       # Shiny app at http://localhost:3838
+#   docker compose up marimo      # marimo notebook at http://localhost:2718
+#   docker compose run --rm validate
+#
+# Source code is bind-mounted so edits to R/ or python/ are picked up on
+# the next reload without rebuilding the image.
+
+services:
+  shiny:
+    build: .
+    image: synthesim:latest
+    container_name: synthesim-shiny
+    ports:
+      - "3838:3838"
+    volumes:
+      - .:/synthesim
+    command: >
+      R -e "shiny::runApp('inst/shiny/synthesim',
+            host = '0.0.0.0', port = 3838)"
+
+  marimo:
+    build: .
+    image: synthesim:latest
+    container_name: synthesim-marimo
+    ports:
+      - "2718:2718"
+    volumes:
+      - .:/synthesim
+    command: >
+      python3 -m marimo edit
+      --host 0.0.0.0 --port 2718 --headless --no-token
+      python/synthesim/synthesim.py
+
+  validate:
+    build: .
+    image: synthesim:latest
+    container_name: synthesim-validate
+    volumes:
+      - .:/synthesim
+    command: Rscript tests/validate_reference_modes.R

@@ -53,10 +53,27 @@ It's an open-science explainer, packaged as a tool.
 | [`inst/vensim/MEDv4_secondary_signal.mdl`](inst/vensim/MEDv4_secondary_signal.mdl) | Read-only copy of the source Vensim model (provenance). |
 | [`docs/theory.md`](docs/theory.md) | Plain-English explainer of the MEDv4 equations and what the seven reference modes test. |
 | [`docs/figures/`](docs/figures/) | RM1, RM4, RM5 validator output PNGs. |
+| [`Dockerfile`](Dockerfile) + [`docker-compose.yml`](docker-compose.yml) | Reproducible runtime — R 4.5.2 + Python + all deps, one image, three entrypoints (Shiny / marimo / validator). |
 
 ## Run locally
 
-### Shiny (R)
+### Docker (recommended — one image, three runtimes)
+
+Everything in one container; no host R or Python install needed.
+
+```bash
+# Build once:
+docker compose build
+
+# Pick what to run:
+docker compose up shiny           # Shiny at http://localhost:3838
+docker compose up marimo          # marimo editor at http://localhost:2718
+docker compose run --rm validate  # Reference-mode validator (7-test gate)
+```
+
+The image is `rocker/r-ver:4.5.2` + slim apt deps + Posit Public Package Manager binaries (so R packages install in seconds, not minutes) + `marimo + numpy + matplotlib` via pip. Source is bind-mounted so edits hot-reload without rebuilding.
+
+### Shiny (host R)
 
 ```r
 # Install the runtime deps:
