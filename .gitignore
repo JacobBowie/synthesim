@@ -1,0 +1,36 @@
+# R
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rproj
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+env/
+.marimo.toml
+
+# marimo session caches + WASM build artifacts (regenerable)
+**/__marimo__/
+build/
+dist/
+*.html
+
+# Validator output (regenerable via tests/validate_reference_modes.R)
+data/validation/reference_modes/*.rds
+data/validation/reference_modes/*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Claude / agent state
+.claude/

@@ -1,0 +1,33 @@
+Package: synthesim
+Title: Interactive Explorer for the MEDv4 Fitness-Fatigue Model
+Version: 0.1.0
+Authors@R:
+    person("Jacob", "Bowie", email = "jacob.bowie2@gmail.com",
+           role = c("aut", "cre"))
+Description: A deterministic forward-simulator for the MEDv4
+    fitness-fatigue-signal ODE, with a Shiny + marimo explorer and a
+    seven-test reference-mode validator anchored to canonical
+    resistance-training literature. Models the three-stock structure
+    Fitness/Fatigue/Signal driven by a TRIMP forcing function and
+    exposes scenario builders for arbitrary periodization schemes
+    (Renaissance Periodization mesocycles, return-from-break,
+    detraining, custom event lists).
+License: MIT + file LICENSE
+URL: https://github.com/JacobBowie/synthesim, https://get-paid.shinyapps.io/synthesim/
+BugReports: https://github.com/JacobBowie/synthesim/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Imports:
+    deSolve,
+    tibble,
+    dplyr,
+    tidyr
+Suggests:
+    shiny,
+    bslib,
+    ggplot2,
+    patchwork,
+    DiagrammeR,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

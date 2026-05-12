@@ -1,0 +1,67 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "synthesim: an interactive explorer for the MEDv4 fitness-fatigue model"
+abstract: >
+  A deterministic forward-simulator for the MEDv4 fitness-fatigue-signal
+  ODE — a three-stock system-dynamics model of resistance-training
+  adaptation. Ships with a 7-test reference-mode validator that anchors
+  the model to canonical resistance-training literature (dose-response,
+  detraining, ADL floor, saturation). Available as a Shiny app, a marimo
+  notebook (with WASM export), and an R simulator.
+authors:
+  - family-names: Bowie
+    given-names: Jacob
+    email: jacob.bowie2@gmail.com
+    affiliation: University of Connecticut
+repository-code: "https://github.com/JacobBowie/synthesim"
+url: "https://get-paid.shinyapps.io/synthesim/"
+license: MIT
+version: "0.1.0"
+date-released: "2026-05-12"
+keywords:
+  - fitness-fatigue model
+  - resistance training
+  - system dynamics
+  - MEDv4
+  - reference-mode validation
+  - Shiny
+  - marimo
+references:
+  - type: article
+    authors:
+      - family-names: Banister
+        given-names: E.W.
+      - family-names: Calvert
+        given-names: T.W.
+      - family-names: Savage
+        given-names: M.V.
+      - family-names: Bach
+        given-names: T.
+    title: "A systems model of training for athletic performance"
+    journal: "Australian Journal of Sports Medicine"
+    year: 1975
+    volume: 7
+  - type: article
+    authors:
+      - family-names: Calvert
+        given-names: T.W.
+      - family-names: Banister
+        given-names: E.W.
+      - family-names: Savage
+        given-names: M.V.
+      - family-names: Bach
+        given-names: T.
+    title: "A systems model of the effects of training on physical performance"
+    journal: "IEEE Transactions on Systems, Man, and Cybernetics"
+    year: 1976
+    volume: 6
+    issue: 2
+    doi: "10.1109/TSMC.1976.5409179"
+  - type: book
+    authors:
+      - family-names: Sterman
+        given-names: J.D.
+    title: "Business Dynamics: Systems Thinking and Modeling for a Complex World"
+    publisher: "Irwin/McGraw-Hill"
+    year: 2000
