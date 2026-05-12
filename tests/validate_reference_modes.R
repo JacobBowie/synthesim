@@ -16,7 +16,7 @@ source("R/reference_mode_tests.R")
 
 cat("=== Reference-mode validation suite —",
     format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "===\n")
-cat("    Source: docs/parameter_inventory_2026_04_24.md §8\n\n")
+cat("    See R/reference_mode_tests.R for the per-test definitions.\n\n")
 
 # ---- Run the suite under v2 defaults (ADL enabled) -------------------------
 results <- run_reference_mode_tests()

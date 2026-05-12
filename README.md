@@ -113,15 +113,15 @@ Expected output at v2 defaults: **7/7 PASS**.
 
 ## The seven reference modes (what the validator checks)
 
-| # | Reference mode | Citation anchor |
-|---|---|---|
-| RM1 | Dose-response: doubling training volume increases steady-state Fitness | Schoenfeld 2017 dose-response review |
-| RM2 | Hard-easy: periodized loading produces higher peak than constant | Stone 2007 periodization principles |
-| RM3 | Overtraining: excessive load suppresses Fitness via Fatigue | Meeusen 2013 overtraining consensus |
-| RM4 | Detraining: Fitness decays after training stops | Mujika 2000 detraining review |
-| RM5 | ADL floor: untrained ≠ zero (activities of daily living maintain baseline) | Bickel 2011 |
-| RM10 | Adaptation rate saturation: response is non-linear in dose | Hellard 2005 Hill saturation |
-| RM11 | Recovery saturation: Fatigue clears with bounded time-constant | Banister 1975 |
+| # | Reference mode | What it tests | Citation anchor |
+|---|---|---|---|
+| RM1 | **Dose-response** | Doubling weekly training volume produces a larger steady-state Fitness gain (ratio > 1.3) | Schoenfeld 2017; Krieger 2010 |
+| RM2 | **Diminishing returns** | Low-baseline subjects gain *more relatively* than high-baseline (relative-gain ordering) | Ahtiainen 2003; Suchomel 2016 |
+| RM3 | **Ceiling** | Asymptotic Fitness under constant load (final-50wk CV < 0.05) | Bickel & Bamman 2011 |
+| RM4 | **Detraining decay** | Fitness loss after training stops sits in 0.5–3 %/wk | Mujika & Padilla 2000; Bickel & Bamman 2011 |
+| RM5 | **ADL floor** | With ADL, untrained Fitness floors at ≥ 85 % of baseline (vs collapse without) | Thom 2005; LeBlanc 2000 |
+| RM10 | **Plateau under constant load** | After plateau, additional Fitness gain ≤ 10 % at t=200 | DeLorme 1945; Kraemer & Ratamess 2004 ACSM |
+| RM11 | **Adaptive heterogeneity** | Cross-subject 5–95 % relative-gain range ≥ 0.3 (hyper-responders vs non-responders) | Hubal 2005 MSSE |
 
 Failing any of these at sensible parameter values means the structural model is wrong, not just the calibration. The validator runs **before** any downstream work.
 
